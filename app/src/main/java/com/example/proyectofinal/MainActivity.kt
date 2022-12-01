@@ -10,13 +10,6 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.navigation.compose.NavHost
@@ -24,26 +17,22 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.namespace.R
 import com.example.proyectofinal.presentation.screens.Confirmacion
-import com.example.proyectofinal.presentation.screens.Login
 import com.example.proyectofinal.presentation.screens.Pago
 import com.example.proyectofinal.presentation.screens.PantallaPrincipal
 import com.example.proyectofinal.ui.theme.ProyectoFinalTheme
 
 val CHANNEL_ID="1"
 class MainActivity : ComponentActivity() {
-    private   var  channel: NotificationChannel?=null
+    private var channel: NotificationChannel?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         createNotificationChannel()
         setContent {
+
             ProyectoFinalTheme {
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "login" ){
-                    composable("login") {
-                        Login(navController)
-                    }
-
+                NavHost(navController = navController, startDestination = "principal" ){
                     composable("principal"){
                         PantallaPrincipal(navController)
                     }
@@ -104,17 +93,4 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ProyectoFinalTheme {
-        Greeting("Android")
-    }
 }
