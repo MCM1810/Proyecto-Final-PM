@@ -2,7 +2,6 @@ package com.example.proyectofinal.model.firebase
 
 import android.util.Log
 import com.example.proyectofinal.model.entity.Menus
-import com.example.proyectofinal.model.firebase.FirebaseManager
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase

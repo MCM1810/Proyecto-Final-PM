@@ -5,6 +5,6 @@ data class Menus (
     val contenido : String,
     val descripcion : String,
     val nombre : String,
-    val precio : Int
+    val precio : Int,
     val crest : String
 )
