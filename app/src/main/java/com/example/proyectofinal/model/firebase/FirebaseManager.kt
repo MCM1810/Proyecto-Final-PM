@@ -41,7 +41,8 @@ class FirebaseManager {
                             nombre = doc.data["nombre"]!! as String,
                             contenido = doc.data["contenido"]!! as String,
                             descripcion = doc.data["descripcion"]!! as String,
-                            precio = doc.data["precio"]!! as Int
+                            precio = doc.data["precio"]!! as Int,
+                            crest = doc.data["crest"]!! as String
                         )
                     )
                 }
