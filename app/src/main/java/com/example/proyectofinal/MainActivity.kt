@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.namespace.R
 import com.example.proyectofinal.presentation.screens.Confirmacion
+import com.example.proyectofinal.presentation.screens.Login
 import com.example.proyectofinal.presentation.screens.Pago
 import com.example.proyectofinal.presentation.screens.PantallaPrincipal
 import com.example.proyectofinal.ui.theme.ProyectoFinalTheme
@@ -32,9 +33,13 @@ class MainActivity : ComponentActivity() {
 
             ProyectoFinalTheme {
                 val navController = rememberNavController()
-                NavHost(navController = navController, startDestination = "principal" ){
+                NavHost(navController = navController, startDestination = "login" ){
+                    composable("login") {
+                        Login(navController = navController)
+                    }
+
                     composable("principal"){
-                        PantallaPrincipal(navController)
+                        PantallaPrincipal(navController = navController)
                     }
                     composable("pago"){
                         Pago(navController, onNotificationClick = sendNotifiaction)
